@@ -1,0 +1,24 @@
+name: Bug
+description: Relatar um problema reproduzível (sem dados pessoais).
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: 'Vulnerabilidades sensíveis: siga SECURITY.md. Não envie tokens, banco, certificados, clipboard ou logs completos.'
+  - type: input
+    id: version
+    attributes:
+      label: Versão do OrbLink e Windows
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Passos, resultado esperado e resultado observado
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto técnico anonimizado
+      description: Tipo de rede, monitores, escalas DPI; omita nomes e IPs pessoais.

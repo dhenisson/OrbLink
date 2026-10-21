@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="OrbLinkLogo">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="Transparent" Geometry="M0,0 L40,0 40,40 0,40 Z"/>
+                <GeometryDrawing Geometry="M15,27 C7,27 4,20 8,14 C11,9 16,9 21,12">
+                    <GeometryDrawing.Pen><Pen Brush="#E6F2FF" Thickness="3.5" StartLineCap="Round" EndLineCap="Round"/></GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M25,13 C33,13 36,20 32,26 C29,31 24,31 19,28">
+                    <GeometryDrawing.Pen><Pen Brush="#93C7FF" Thickness="3.5" StartLineCap="Round" EndLineCap="Round"/></GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M15,24 L25,16">
+                    <GeometryDrawing.Pen><Pen Brush="White" Thickness="3.5" StartLineCap="Round" EndLineCap="Round"/></GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

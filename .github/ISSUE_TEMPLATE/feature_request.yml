@@ -1,0 +1,15 @@
+name: Ideia
+description: Sugerir uma melhoria com um caso de uso.
+title: '[Ideia] '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Que problema você quer resolver?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposta e alternativas
+      description: Explique como preservar o fluxo da orb, segurança e estabilidade.
