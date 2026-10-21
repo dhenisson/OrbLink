@@ -23,10 +23,10 @@ O probe usa `GET /api/peer/health`. O health público antigo continua disponíve
 
 ## Atualizar os dois PCs
 
-1. Em cada PC, use **Sair** no ícone do OrbLink/AMS Transfer ao lado do relógio.
+1. Em cada PC, use **Sair** no ícone do OrbLink/OrbLink ao lado do relógio.
 2. Extraia `OrbLink-0.2.1-win-x64.zip` em uma pasta nova e estável. Abra `OrbLink.exe`.
 3. Confirme **0.2.1** em Configurações > Sobre nos dois PCs.
-4. Não exclua `%LOCALAPPDATA%\AMS Transfer`: identidade, certificado, tokens, histórico, recebidos, aparência e posição continuam nessa pasta.
+4. Não exclua `%LOCALAPPDATA%\OrbLink`: identidade, certificado, tokens, histórico, recebidos, aparência e posição continuam nessa pasta.
 5. Não refaça o pareamento se os dois PCs já estiverem pareados.
 6. Se a inicialização automática estiver ativa, salve Configurações > Geral com essa opção marcada para apontar para o novo executável.
 
@@ -56,7 +56,7 @@ Loopback, APIPA `169.254.0.0/16`, Radmin, Tailscale, VPNs/túneis e adaptadores 
 
 ## Logs
 
-Arquivos em `%LOCALAPPDATA%\AMS Transfer\Logs`. Exemplos:
+Arquivos em `%LOCALAPPDATA%\OrbLink\Logs`. Exemplos:
 
 ```text
 Peer probe started: PC receptor / <endereço-LAN>:45832
@@ -107,14 +107,14 @@ Não existe commit-base da 0.2.0 neste workspace; esta relação descreve a etap
 
 Novos:
 
-- `src/AMS.Transfer.Network/PeerPresenceMonitor.cs`
-- `src/AMS.Transfer.Network/PeerProbeClient.cs`
-- `src/AMS.Transfer.Network/PinnedHttp.cs`
-- `src/AMS.Transfer.Network/LanInterfaceSelector.cs`
-- `tests/AMS.Transfer.Tests/PresenceIntegrationTests.cs`
-- `tests/AMS.Transfer.Tests/PeerPresenceTests.cs`
-- `tests/AMS.Transfer.Tests/ProbeProtocolTests.cs`
-- `tests/AMS.Transfer.Tests/LanInterfaceTests.cs`
+- `src/OrbLink.Network/PeerPresenceMonitor.cs`
+- `src/OrbLink.Network/PeerProbeClient.cs`
+- `src/OrbLink.Network/PinnedHttp.cs`
+- `src/OrbLink.Network/LanInterfaceSelector.cs`
+- `tests/OrbLink.Tests/PresenceIntegrationTests.cs`
+- `tests/OrbLink.Tests/PeerPresenceTests.cs`
+- `tests/OrbLink.Tests/ProbeProtocolTests.cs`
+- `tests/OrbLink.Tests/LanInterfaceTests.cs`
 - `docs/ORBLINK-0.2.1.md`
 
 Alterados:
@@ -123,8 +123,8 @@ Alterados:
 - Armazenamento: `SqliteStore.cs`, com atualização condicional apenas de endereço/porta/LastSeenUtc; sem migração destrutiva.
 - Aplicativo: `DevicesWindow.xaml` e `.xaml.cs`, `BubbleWindow.xaml.cs`, `TextSendWindow.xaml.cs`, `Services/ClipboardImages.cs` (onde reside ClipboardImageSender).
 - Encerramento/diagnóstico: `MainWindow.xaml.cs`, `App.xaml.cs`; guard contra fechamento reentrante e logs de cada etapa do diagnóstico.
-- Versão: `AMS.Transfer.App.csproj`, `app.manifest`, `SettingsWindow.xaml`.
-- Regressão WPF: `tests/AMS.Transfer.Tests/WpfFeaturesTests.cs`.
+- Versão: `OrbLink.App.csproj`, `app.manifest`, `SettingsWindow.xaml`.
+- Regressão WPF: `tests/OrbLink.Tests/WpfFeaturesTests.cs`.
 - Publicação/documentação: `scripts/publish.ps1`, `README.md`, `docs/ARCHITECTURE.md`.
 
-Os namespaces e diretório interno AMS Transfer permanecem intencionalmente inalterados. A interface e os recursos visuais da 0.2.0 foram preservados.
+Os namespaces e diretório interno OrbLink permanecem intencionalmente inalterados. A interface e os recursos visuais da 0.2.0 foram preservados.

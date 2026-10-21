@@ -55,5 +55,5 @@ begin
       if CompareText(Command, '"' + ExpandConstant('{app}\OrbLink.exe') + '"') = 0 then
         RegDeleteValue(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Run', 'OrbLink');
 end;
-; Never delete %LOCALAPPDATA%\AMS Transfer on install/update/uninstall.
+; Never delete %LOCALAPPDATA%\OrbLink on install/update/uninstall.
 ; No firewall rule, certificate generation, signing bypass or registry-wide cleanup.

@@ -24,13 +24,13 @@
 
 ## 0.2.0 — 2026-10-07
 
-- Redesign visual e nome OrbLink sobre a base AMS Transfer.
+- Redesign visual e nome OrbLink sobre a base OrbLink.
 - Ctrl+V de imagens, Copiar imagem e melhorias da UI.
 - Personalização PNG/ICO, preview, persistência e restauração do ícone.
 - Ajustes da orb, multi-monitor e DPI.
 
 ## 0.1.0 — 2026-10-07
 
-- Primeira versão funcional AMS Transfer.
+- Primeira versão funcional OrbLink.
 - Transferência LAN de arquivos e texto, pareamento, HTTPS e histórico local.
 - Orb flutuante e drag-and-drop externo com arquivos reais/CF_HDROP.

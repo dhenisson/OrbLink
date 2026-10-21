@@ -42,7 +42,7 @@ O build não tem assinatura Authenticode e pode gerar aviso SmartScreen. Não de
 
 ## Primeiros passos
 
-Abra **Computadores**, encontre o outro PC e solicite pareamento. O receptor precisa aceitar. Já pareados na 0.2.1 não precisam parear novamente; mantenha `%LOCALAPPDATA%\AMS Transfer`, que contém os dados existentes. Novo pareamento com receptor 0.3.0 requer cliente 0.3.0.
+Abra **Computadores**, encontre o outro PC e solicite pareamento. O receptor precisa aceitar. Já pareados na 0.2.1 não precisam parear novamente; mantenha `%LOCALAPPDATA%\OrbLink`, que contém os dados existentes. Novo pareamento com receptor 0.3.0 requer cliente 0.3.0.
 
 Envie arrastando um arquivo para a orb, usando Ctrl+V de imagem no painel ativo ou Enviar texto. **Computadores → Atualizar** verifica os peers diretamente. Iniciar com Windows é opcional em **Configurações → Geral**; ao executar uma nova cópia, uma entrada já habilitada é atualizada para seu caminho.
 
@@ -58,13 +58,13 @@ O primeiro pareamento ainda depende da confiança na LAN e na aprovação humana
 
 ## Desenvolvimento
 
-Windows com SDK .NET 10 indicado em `global.json`, PowerShell e Git. A solução principal é `OrbLink.slnx`; o alias `AMS.Transfer.slnx` e namespaces internos foram mantidos para reduzir risco de migração.
+Windows com SDK .NET 10 indicado em `global.json`, PowerShell e Git. A solução principal é `OrbLink.slnx`; o alias `OrbLink.slnx` e namespaces internos foram mantidos para reduzir risco de migração.
 
 ```powershell
 dotnet restore OrbLink.slnx
 dotnet build OrbLink.slnx -c Release
 dotnet test OrbLink.slnx -c Release
-dotnet run --project src/AMS.Transfer.App/AMS.Transfer.App.csproj
+dotnet run --project src/OrbLink.App/OrbLink.App.csproj
 ```
 
 Veja [arquitetura](docs/ARCHITECTURE.md), [desenvolvimento](docs/DEVELOPMENT.md), [configuração](docs/CONFIGURATION.md), [testes](docs/TESTING.md) e [protocolo](docs/API.md).

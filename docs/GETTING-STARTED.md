@@ -7,7 +7,7 @@ Arraste. Solte. Receba.
 
 Windows x64 com suporte ao runtime .NET 10 incluído (validar seu Windows 10/11 atualizado). Rede privada confiável e dois PCs. O pacote portátil não exige SDK ou instalação administrativa.
 
-Feche OrbLink/AMS Transfer antigo pela bandeja. Extraia `OrbLink-win-x64-v0.3.0.zip` em uma pasta estável, abra `OrbLink.exe` e confira 0.3.0 em Configurações → Sobre. Não execute duas versões simultaneamente; o aviso de instância bloqueadora mostra processo/PID/versão quando disponíveis.
+Feche OrbLink/OrbLink antigo pela bandeja. Extraia `OrbLink-win-x64-v0.3.0.zip` em uma pasta estável, abra `OrbLink.exe` e confira 0.3.0 em Configurações → Sobre. Não execute duas versões simultaneamente; o aviso de instância bloqueadora mostra processo/PID/versão quando disponíveis.
 
 Não há assinatura digital nesta beta. SmartScreen pode avisar; não desative SmartScreen/antivírus. Confira a origem e compare `Get-FileHash .\OrbLink-win-x64-v0.3.0.zip -Algorithm SHA256` com o manifesto recebido por um canal confiável. Hash não substitui assinatura/autenticidade da origem.
 
@@ -32,7 +32,7 @@ Geral → Iniciar OrbLink com Windows é opcional. Se já habilitado, executar a
 
 ## Atualizar sem perder dados
 
-Saia da versão antiga e extraia a nova em pasta separada. **Não apague `%LOCALAPPDATA%\AMS Transfer`**: nome interno preservado, assim como identidade, certificados, tokens, pares, recebidos e histórico. Faça backup dessa pasta com o aplicativo fechado antes de mudanças de versão. DPAPI exige o mesmo usuário/perfil Windows para recuperar os segredos; copiar para outro usuário não equivale a migrar credenciais.
+Saia da versão antiga e extraia a nova em pasta separada. **Não apague `%LOCALAPPDATA%\OrbLink`**: nome interno preservado, assim como identidade, certificados, tokens, pares, recebidos e histórico. Faça backup dessa pasta com o aplicativo fechado antes de mudanças de versão. DPAPI exige o mesmo usuário/perfil Windows para recuperar os segredos; copiar para outro usuário não equivale a migrar credenciais.
 
 Pareamentos válidos da 0.2.1 continuam funcionando com 0.3.0; não é necessário refazê-los. Novo pareamento com receptor 0.3.0 exige cliente 0.3.0. A 0.2.0 não possui o health autenticado exigido pela presença atual.
 
@@ -40,7 +40,7 @@ Pareamentos válidos da 0.2.1 continuam funcionando com 0.3.0; não é necessár
 
 Computadores → Atualizar executa discovery e probe direto autenticado. Ao retornar da rede/suspensão, o refresh e heartbeat tentam recuperar os pares. Mudança de IP só é salva após validar certificado, token e DeviceId; se UDP estiver bloqueado e o endereço salvo também mudar, não existe busca cega por toda a sub-rede.
 
-Falhas de certificado local são exibidas sem regeneração automática. Preserve a pasta, não exclua credenciais; consulte a auditoria no source (`docs/SECURITY-AUDIT.md`). Logs ficam em `%LOCALAPPDATA%\AMS Transfer\Logs` e contêm dados técnicos que precisam de anonimização antes de compartilhar.
+Falhas de certificado local são exibidas sem regeneração automática. Preserve a pasta, não exclua credenciais; consulte a auditoria no source (`docs/SECURITY-AUDIT.md`). Logs ficam em `%LOCALAPPDATA%\OrbLink\Logs` e contêm dados técnicos que precisam de anonimização antes de compartilhar.
 
 Sem retomada de transferências, seletor de destino, auto-update ou instalador validado. Cancelamento de operação de rede limpa parciais; a UI não oferece fila/botão global de cancelamento para todos os caminhos. Fechar o aplicativo interrompe transferências.
 

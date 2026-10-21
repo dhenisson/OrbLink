@@ -13,7 +13,7 @@ try {
     Invoke-DotNet -Arguments @('test', 'OrbLink.slnx', '-c', 'Release', '--no-build', '--no-restore', '--logger', 'trx;LogFileName=beta.trx', '--results-directory', 'outputs/validacao-v0.3.0')
     if (-not $SkipPublish) {
         # Serial: publish changes intermediates and must not race the solution build/tests.
-        Invoke-DotNet -Arguments @('publish', 'src/AMS.Transfer.App/AMS.Transfer.App.csproj', '-c', 'Release', '-r', 'win-x64', '--self-contained', 'true', '-o', $OutputPath,
+        Invoke-DotNet -Arguments @('publish', 'src/OrbLink.App/OrbLink.App.csproj', '-c', 'Release', '-r', 'win-x64', '--self-contained', 'true', '-o', $OutputPath,
             '-p:PublishSingleFile=true', '-p:IncludeNativeLibrariesForSelfExtract=true', '-p:DebugType=None', '-p:DebugSymbols=false')
         Copy-Item -LiteralPath 'docs/GETTING-STARTED.md' -Destination (Join-Path $OutputPath 'LEIA-ME.md') -Force
         Copy-Item -LiteralPath 'LICENSE' -Destination (Join-Path $OutputPath 'LICENSE.txt') -Force

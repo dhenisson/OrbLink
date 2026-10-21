@@ -18,7 +18,7 @@ CI `.github/workflows/build.yml`: push/PR, Windows, auditoria/restore/build Rele
 
 ## Instalador futuro
 
-`scripts/installer/OrbLink.iss` + `build-installer.ps1` preparam Inno Setup por usuário, sem elevação, em `%LOCALAPPDATA%\Programs\OrbLink`, com atalhos e startup opcional desmarcado. Atualização mantém AppId/caminho; não toca `%LOCALAPPDATA%\AMS Transfer`. Uninstall só remove startup quando ainda aponta para a própria instalação; dados pessoais não são listados para remoção.
+`scripts/installer/OrbLink.iss` + `build-installer.ps1` preparam Inno Setup por usuário, sem elevação, em `%LOCALAPPDATA%\Programs\OrbLink`, com atalhos e startup opcional desmarcado. Atualização mantém AppId/caminho; não toca `%LOCALAPPDATA%\OrbLink`. Uninstall só remove startup quando ainda aponta para a própria instalação; dados pessoais não são listados para remoção.
 
 Não foi gerado EXE de instalador validado nesta entrega. Instale o compilador oficial Inno Setup apenas em ambiente de teste e use:
 

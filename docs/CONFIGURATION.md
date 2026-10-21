@@ -5,13 +5,13 @@
 
 Configurações → Geral/Aparência/Atalhos/Dispositivos/Sobre. Preferências são armazenadas no SQLite, não em `.env` ou JSON externo. Não edite credenciais manualmente.
 
-Raiz mantida por compatibilidade: `%LOCALAPPDATA%\AMS Transfer`. `ams-transfer.db` guarda identidade, pares, configurações e histórico; `device.pfx` é o certificado privado com senha protegida por DPAPI; `Received` guarda arquivos recebidos, `Outgoing` imagens temporárias, `Appearance` ícones gerenciados, `Logs` logs locais. Banco, PFX e recebidos nunca entram no source ZIP.
+Raiz mantida por compatibilidade: `%LOCALAPPDATA%\OrbLink`. `orblink.db` guarda identidade, pares, configurações e histórico; `device.pfx` é o certificado privado com senha protegida por DPAPI; `Received` guarda arquivos recebidos, `Outgoing` imagens temporárias, `Appearance` ícones gerenciados, `Logs` logs locais. Banco, PFX e recebidos nunca entram no source ZIP.
 
 Defaults de aparência em `AppearanceSettings`: orb 68 px, ícone 30 px, destaque `#55A5FF`, fundo `#152541`, tamanho normalizado entre 52–100 px e ícone 16–56 px. Consulte o código para todas as preferências. Valores inválidos/JSON inválido usam defaults; ícone ausente/inválido usa logo padrão. Ícones PNG/ICO: até 4 MiB, dimensão até 8192 e até 32 milhões de pixels, redimensionados para exibição.
 
 ## Inicialização Windows
 
-Opcional e desativada se não houver entrada existente. Usa `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`, valor `OrbLink`, com caminho absoluto entre aspas. Ao habilitar/atualizar, remove a entrada legada `AMS Transfer`. Executar uma nova cópia atualiza uma entrada já habilitada; mover/apagar o executável sem executar a nova cópia ainda pode deixar caminho quebrado. A opção não usa tarefas agendadas ou privilégios administrativos.
+Opcional e desativada se não houver entrada existente. Usa `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`, valor `OrbLink`, com caminho absoluto entre aspas. Ao habilitar/atualizar, remove a entrada legada `OrbLink`. Executar uma nova cópia atualiza uma entrada já habilitada; mover/apagar o executável sem executar a nova cópia ainda pode deixar caminho quebrado. A opção não usa tarefas agendadas ou privilégios administrativos.
 
 ## Rede e limites internos
 

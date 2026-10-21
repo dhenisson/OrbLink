@@ -4,11 +4,11 @@ Guia histórico da 0.2.0. Para instalar/testar a versão atual, consulte [0.3.0 
 
 ## Atualizar sem perder a V1
 
-O OrbLink evolui a base AMS Transfer. Namespaces, banco, identidade, certificado, tokens, arquivos recebidos, histórico e posição foram preservados. Nome visual, executável e publicação agora usam **OrbLink**.
+O OrbLink evolui a base OrbLink. Namespaces, banco, identidade, certificado, tokens, arquivos recebidos, histórico e posição foram preservados. Nome visual, executável e publicação agora usam **OrbLink**.
 
-1. Encerre o **AMS Transfer** pelo menu **Sair** do ícone ao lado do relógio.
+1. Encerre o **OrbLink** pelo menu **Sair** do ícone ao lado do relógio.
 2. Extraia o novo ZIP em uma pasta própria e abra `OrbLink.exe`.
-3. Faça isso nos dois PCs, na mesma rede local. **Não exclua `%LOCALAPPDATA%\AMS Transfer`.**
+3. Faça isso nos dois PCs, na mesma rede local. **Não exclua `%LOCALAPPDATA%\OrbLink`.**
 4. Espere alguns segundos para a descoberta. Abra **Computadores** e pareie, com confirmação no receptor, se não houver par autorizado.
 
 A proteção de instância única é compartilhada com a V1. O aplicativo antigo não foi encerrado durante o desenvolvimento; o teste da publicação usou dados temporários e descoberta desativada. Se o Windows pedir acesso à rede, autorize somente na rede privada em que você confia.
@@ -98,36 +98,36 @@ Caminhos relativos à raiz do projeto. Ainda não existe commit-base da V1; esta
 
 ### Alterados — aplicativo
 
-- `src/AMS.Transfer.App/AMS.Transfer.App.csproj`: nome, versão, ícone, usings e DPI.
-- `src/AMS.Transfer.App/App.xaml`, `App.xaml.cs`: tema, serviços, tray, saída e diagnóstico isolado.
-- `src/AMS.Transfer.App/AssemblyInfo.cs`: acesso interno para testes.
-- `src/AMS.Transfer.App/BubbleWindow.xaml`, `BubbleWindow.xaml.cs`: orb, estados, aparência, arrasto/posição, badge e animações.
-- `src/AMS.Transfer.App/MainWindow.xaml`, `MainWindow.xaml.cs`: painel, cards, Ctrl+V, feedback, geometria e vida útil durante OLE.
-- `src/AMS.Transfer.App/DevicesWindow.xaml`, `DevicesWindow.xaml.cs`: tema, nome e atualização da lista.
-- `src/AMS.Transfer.App/HistoryWindow.xaml`, `HistoryWindow.xaml.cs`: tema, nome, datas/status em português.
-- `src/AMS.Transfer.App/TextSendWindow.xaml`: tema/título; lógica de texto preservada.
-- `src/AMS.Transfer.App/StartupManager.cs`: entrada OrbLink e reconhecimento da legada.
-- `src/AMS.Transfer.App/app.manifest`: nome, versão, DPI PerMonitorV2.
+- `src/OrbLink.App/OrbLink.App.csproj`: nome, versão, ícone, usings e DPI.
+- `src/OrbLink.App/App.xaml`, `App.xaml.cs`: tema, serviços, tray, saída e diagnóstico isolado.
+- `src/OrbLink.App/AssemblyInfo.cs`: acesso interno para testes.
+- `src/OrbLink.App/BubbleWindow.xaml`, `BubbleWindow.xaml.cs`: orb, estados, aparência, arrasto/posição, badge e animações.
+- `src/OrbLink.App/MainWindow.xaml`, `MainWindow.xaml.cs`: painel, cards, Ctrl+V, feedback, geometria e vida útil durante OLE.
+- `src/OrbLink.App/DevicesWindow.xaml`, `DevicesWindow.xaml.cs`: tema, nome e atualização da lista.
+- `src/OrbLink.App/HistoryWindow.xaml`, `HistoryWindow.xaml.cs`: tema, nome, datas/status em português.
+- `src/OrbLink.App/TextSendWindow.xaml`: tema/título; lógica de texto preservada.
+- `src/OrbLink.App/StartupManager.cs`: entrada OrbLink e reconhecimento da legada.
+- `src/OrbLink.App/app.manifest`: nome, versão, DPI PerMonitorV2.
 
 ### Novos — aplicativo
 
-- `src/AMS.Transfer.App/GlobalUsings.cs`.
-- `src/AMS.Transfer.App/SettingsWindow.xaml`, `SettingsWindow.xaml.cs`.
-- `src/AMS.Transfer.App/Themes/Colors.xaml`, `Controls.xaml`, `Icons.xaml`.
-- `src/AMS.Transfer.App/Services/AppearanceService.cs`, `IconStore.cs`, `ClipboardImages.cs`, `NativeFileDrag.cs`, `PanelShortcuts.cs`, `ScreenGeometry.cs`, `TrayIconFactory.cs`.
-- `src/AMS.Transfer.App/Assets/OrbLink.ico`.
+- `src/OrbLink.App/GlobalUsings.cs`.
+- `src/OrbLink.App/SettingsWindow.xaml`, `SettingsWindow.xaml.cs`.
+- `src/OrbLink.App/Themes/Colors.xaml`, `Controls.xaml`, `Icons.xaml`.
+- `src/OrbLink.App/Services/AppearanceService.cs`, `IconStore.cs`, `ClipboardImages.cs`, `NativeFileDrag.cs`, `PanelShortcuts.cs`, `ScreenGeometry.cs`, `TrayIconFactory.cs`.
+- `src/OrbLink.App/Assets/OrbLink.ico`.
 
 ### Lógica, persistência e rede
 
-- Novos: `src/AMS.Transfer.Core/AppearanceSettings.cs`, `PanelPlacement.cs`, `TransferActivity.cs`.
-- Novo: `src/AMS.Transfer.Storage/AppearanceStore.cs`.
-- Alterado: `src/AMS.Transfer.Storage/AppPaths.cs` — aparência e temporários, sem mudar a raiz da V1.
-- Alterados: `src/AMS.Transfer.Network/TransferServer.cs`, `NetworkCoordinator.cs`, `NetworkOptions.cs` — progresso, limite de upload e descoberta opcional no diagnóstico.
+- Novos: `src/OrbLink.Core/AppearanceSettings.cs`, `PanelPlacement.cs`, `TransferActivity.cs`.
+- Novo: `src/OrbLink.Storage/AppearanceStore.cs`.
+- Alterado: `src/OrbLink.Storage/AppPaths.cs` — aparência e temporários, sem mudar a raiz da V1.
+- Alterados: `src/OrbLink.Network/TransferServer.cs`, `NetworkCoordinator.cs`, `NetworkOptions.cs` — progresso, limite de upload e descoberta opcional no diagnóstico.
 
 ### Testes, publicação e documentação
 
-- Alterados: `tests/AMS.Transfer.Tests/AMS.Transfer.Tests.csproj`, `TransferIntegrationTests.cs`.
-- Novos: `tests/AMS.Transfer.Tests/AppearanceTests.cs`, `WpfFeaturesTests.cs`, `GlobalUsings.cs`.
+- Alterados: `tests/OrbLink.Tests/OrbLink.Tests.csproj`, `TransferIntegrationTests.cs`.
+- Novos: `tests/OrbLink.Tests/AppearanceTests.cs`, `WpfFeaturesTests.cs`, `GlobalUsings.cs`.
 - Alterados: `scripts/publish.ps1`, `README.md`, `docs/ARCHITECTURE.md`, `.gitignore` (intermediários em `work/`).
 - Novo: `docs/ORBLINK.md` — cópia em `outputs/GUIA-OrbLink.md` e publicação `LEIA-ME.md`.
 - Entregas: `outputs/OrbLink-win-x64/`, `outputs/OrbLink-win-x64.zip`, `outputs/OrbLink-source.zip`, `outputs/previews/`.

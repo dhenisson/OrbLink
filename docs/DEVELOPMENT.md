@@ -9,14 +9,14 @@ Windows, Git, PowerShell e SDK .NET 10 compatível com `global.json` (atualmente
 dotnet restore OrbLink.slnx
 dotnet build OrbLink.slnx -c Release
 dotnet test OrbLink.slnx -c Release
-dotnet run --project src/AMS.Transfer.App/AMS.Transfer.App.csproj
+dotnet run --project src/OrbLink.App/OrbLink.App.csproj
 ```
 
 O comando normal de execução usa seus dados reais e mutex da sessão Windows. Para testes de startup, use o diagnóstico isolado documentado em [configuração](CONFIGURATION.md); não use a pasta pessoal nesse modo.
 
 ## Estrutura e convenções
 
-`App`: WPF e serviços UI; `Core`: modelos/nomes/geometria; `Storage`: SQLite/DPAPI; `Network`: HTTPS/UDP/pareamento/presença. `tests/AMS.Transfer.Tests` contém xUnit. Namespaces `AMS.Transfer.*` permanecem por compatibilidade. `OrbLink.slnx` é a entrada principal; solução antiga é alias, não outra implementação.
+`App`: WPF e serviços UI; `Core`: modelos/nomes/geometria; `Storage`: SQLite/DPAPI; `Network`: HTTPS/UDP/pareamento/presença. `tests/OrbLink.Tests` contém xUnit. Namespaces `OrbLink.*` permanecem por compatibilidade. `OrbLink.slnx` é a entrada principal; solução antiga é alias, não outra implementação.
 
 Use nullable, async/cancelamento, buffers limitados e chamadas SQL parametrizadas. Preserve comparação de tokens em tempo constante, pinning e DeviceId. Não introduza monitoramento global de clipboard, execução automática de recebidos ou reset de identidade para esconder falhas. Estilos/resources WPF ficam em Themes; use os serviços existentes de clipboard/ícones/drag.
 

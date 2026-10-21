@@ -3,7 +3,7 @@
 
 ## Decisão central: Drag & Drop externo
 
-O arquivo recebido é materializado em `%LOCALAPPDATA%\AMS Transfer\Received`. A bandeja inicia um arrasto OLE por `DragDrop.DoDragDrop` com um `System.Windows.DataObject` no formato `DataFormats.FileDrop`. No Windows, esse formato é publicado como `CF_HDROP`, portanto o destino recebe caminhos de arquivos reais. Isso sustenta o fluxo principal `arrastar → soltar → receber → arrastar` e evita a necessidade de “Salvar como”.
+O arquivo recebido é materializado em `%LOCALAPPDATA%\OrbLink\Received`. A bandeja inicia um arrasto OLE por `DragDrop.DoDragDrop` com um `System.Windows.DataObject` no formato `DataFormats.FileDrop`. No Windows, esse formato é publicado como `CF_HDROP`, portanto o destino recebe caminhos de arquivos reais. Isso sustenta o fluxo principal `arrastar → soltar → receber → arrastar` e evita a necessidade de “Salvar como”.
 
 Essa decisão exige manter o arquivo local enquanto ele aparece no histórico. Uma política futura de retenção poderá remover itens antigos, mas nunca durante um arrasto ativo.
 
@@ -49,7 +49,7 @@ O pareamento inicial depende da confiança do usuário na solicitação exibida 
 
 SQLite usa WAL e conexões curtas. As tabelas guardam configurações, pares e histórico. A posição da bolinha inclui coordenadas, monitor e borda de snap. O banco possui migração inicial para a separação de tokens bidirecionais.
 
-O OrbLink mantém a raiz `%LOCALAPPDATA%\AMS Transfer`. `AppearanceStore` usa a nova chave `OrbLink.Appearance.v1`, sem alterar identidade/pares. Ícones validados são copiados por hash para `Appearance`; a configuração guarda somente o nome gerenciado. PNGs de envio ficam em `Outgoing` e são removidos ao terminar.
+O OrbLink mantém a raiz `%LOCALAPPDATA%\OrbLink`. `AppearanceStore` usa a nova chave `OrbLink.Appearance.v1`, sem alterar identidade/pares. Ícones validados são copiados por hash para `Appearance`; a configuração guarda somente o nome gerenciado. PNGs de envio ficam em `Outgoing` e são removidos ao terminar.
 
 ## UI e clipboard
 
@@ -90,7 +90,7 @@ O teste nativo também materializa CF_HDROP via IDataObject, consulta os caminho
 
 O endpoint público legado `/api/health` permanece compatível, mas não serve para presença. A versão 0.2.0 não possui `/api/peer/health`. Recomenda-se 0.3.0 nos dois PCs; pareamentos 0.2.1 existentes continuam válidos, mas novo pareamento com receptor 0.3.0 exige prova de consulta que clientes antigos não enviam.
 
-`OrbPlacementRecovery` valida coordenadas finitas, interseção com monitores e monitor salvo. Posição inválida volta ao lado direito/centro vertical do principal; checagem periódica e eventos de display/DPI evitam perda permanente da orb. Startup usa mutex por usuário compatível com AMS Transfer e uma entrada HKCU Run, sem privilégios elevados.
+`OrbPlacementRecovery` valida coordenadas finitas, interseção com monitores e monitor salvo. Posição inválida volta ao lado direito/centro vertical do principal; checagem periódica e eventos de display/DPI evitam perda permanente da orb. Startup usa mutex por usuário compatível com OrbLink e uma entrada HKCU Run, sem privilégios elevados.
 
 Logs locais são best-effort: 8 MiB por segmento, três backups por dia, expiração após 14 dias. Mensagens de exceção não são gravadas; apenas tipo/HRESULT. Falha de log não derruba a transferência. Falha de UI/histórico depois do commit não converte um arquivo já salvo em falha do upload.
 
