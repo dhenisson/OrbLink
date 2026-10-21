@@ -5,9 +5,15 @@ Arraste. Solte. Receba.
 
 OrbLink é um aplicativo open source para Windows para transferir arquivos, imagens e textos diretamente entre computadores. Uma orb flutuante aproxima o envio e o recebimento do lugar onde você já trabalha, sem nuvem obrigatória.
 
-**0.3.0 · primeira beta pública · Windows x64 · MIT**
+**Versão 0.3.0 Beta · Windows 64 bits · Licença MIT**
 
-Esta é uma candidata preparada para revisão; o repositório e a release pública ainda não foram publicados. Compatibilidade em dois PCs reais e aplicativos externos continua no checklist de validação.
+[![Baixar OrbLink para Windows](https://img.shields.io/badge/⬇_BAIXAR_ORBLINK-WINDOWS_64_BITS-1f883d?style=for-the-badge)](https://github.com/dhenisson/OrbLink/releases/download/v0.3.0-beta/OrbLink-win-x64-v0.3.0.zip)
+
+**[⬇ BAIXAR ORBLINK 0.3.0 BETA PARA WINDOWS — DOWNLOAD DIRETO](https://github.com/dhenisson/OrbLink/releases/download/v0.3.0-beta/OrbLink-win-x64-v0.3.0.zip)**
+
+Baixe o ZIP, extraia os arquivos e execute `OrbLink.exe` em cada computador. Não é necessário compilar o código-fonte. [Ver todas as versões](https://github.com/dhenisson/OrbLink/releases) · [Verificar SHA-256](https://github.com/dhenisson/OrbLink/releases/download/v0.3.0-beta/SHA256SUMS-v0.3.0.txt).
+
+**Atenção:** enquanto este repositório estiver privado, apenas usuários autorizados poderão baixar. Esta é uma versão beta, ainda com testes manuais entre computadores pendentes.
 
 ## Como funciona
 
