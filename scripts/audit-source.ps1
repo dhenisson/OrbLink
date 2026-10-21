@@ -23,3 +23,6 @@ try {
     Write-Host "Source audit: $($Files.Count) candidates checked; no private artifacts or recognized credential signatures. Human review remains required."
 }
 finally { Pop-Location }
+# git check-ignore returns 1 for a non-ignored file; that is expected, not an audit failure.
+# Reset the native command exit status so pwsh-based CI reports success after a clean audit.
+$global:LASTEXITCODE = 0
